@@ -2,7 +2,7 @@ function quotes(S) { return "\"" + S + "\""; }
 
 
 function Weblink(Dexnumber) {
-	return 'Serebii__Images/' + Dexnumber + '.png';
+	return 'images/pokemon/' + Dexnumber + '.png';
 }
 
 function OpenTxt(content) {
