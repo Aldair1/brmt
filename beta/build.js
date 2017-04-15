@@ -158,6 +158,7 @@ this.compendiumToHtmlImages = function compendiumToHtmlImages   (compendium, bui
 };
 
 let Weblink = (imgName) => `./../images/pokemon/${window.compendiums.aliases[toId(imgName)] || imgName}.png`;
+let WeblinkItem = (imgName) => `./../images/items/${window.compendiums.aliases[toId(imgName)] || imgName}.png`;
 
 window.brmtIcon = function brmtIcon (compendium, title, species, set, rating) {
 	let wrapperClass = "imageWrapper";
@@ -184,7 +185,7 @@ window.brmtIcon = function brmtIcon (compendium, title, species, set, rating) {
 	if (letters === undefined) letters = icon ? "" : set;
 	letters = `<span class='textWrapper'>${letters}</span>`;
 	
-	if (icon) icon = `<img src="${Weblink(icon)}" width=18px height=18px alt="(${window.compendiums.aliases[toId(icon)] || icon}) ">`;
+	if (icon) icon = `<img src="${WeblinkItem(icon)}" width=18px height=18px alt="(${window.compendiums.aliases[toId(icon)] || icon}) ">`;
 	icon = `<span class='iconWrapper'>${icon || ""}</span>`;
 	
 	rating = `<span class='ratingWrapper'>${(rating === undefined) ? "" : rating}</span>`;

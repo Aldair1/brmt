@@ -4,6 +4,9 @@ function quotes(S) { return "\"" + S + "\""; }
 function Weblink(Dexnumber) {
 	return './images/pokemon/' + Dexnumber + '.png';
 }
+function weblinkitem(item) {
+	return './images/items/' + item + '.png';
+}
 
 function OpenTxt(content) {
 	OpenFile(content, 'text/plain');
@@ -22,6 +25,46 @@ function OpenFile(content, type) {
 //	a.click();
 }
 
+function ParseCompendium2(Compendium, MakeImagesClickable) {
+	var Line = Compendium.split("\n");
+	var result = "";
+	
+	for (var i in Line) {
+		var p, q;
+		p = Line[i].indexOf('|');
+		if (p > 0) {
+			q = Line[i].length - 1;
+			while(Line[i].charAt(q) != '|')
+				q--;
+			var cgfEntry = Line[i].substring(0, q+1);
+			var item = Line[i].substring(0, p).trim();
+			var Name = Line[i].substring(p+1, q).trim();
+			var S = '<img src="'
+			      + weblinkitem(item)
+			      + '" alt="'
+			      + Name + ','
+			      + '" title="'
+			      + cgfEntry
+			      + '">';
+			if (MakeImagesClickable) {
+				if (LayeredOnClickInfo)
+					S = AddOnClickInfo(item, S);
+				else S = AddOnClickAddtoteam(item, S);
+			}
+			S += Line[i].substring(q+1, Line[i].length);
+		} else S = Line[i];
+		
+		S = S.replace('Newline', '<br>');
+		S = S.replace('[B]', '<b>');
+		S = S.replace('[I]', '<i>');
+		S = S.replace('[U]', '<u>');
+		S = S.replace('[/B]', '</b>');
+		S = S.replace('[/I]', '</i>');
+		S = S.replace('[/U]', '</u>');
+		result += S + '\n';
+	}
+	return result;
+}
 function ParseCompendium(Compendium, MakeImagesClickable) {
 	var Line = Compendium.split("\n");
 	var result = "";
