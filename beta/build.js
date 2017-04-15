@@ -157,7 +157,7 @@ this.compendiumToHtmlImages = function compendiumToHtmlImages   (compendium, bui
 	return Object.keys(build[species][set][mode][targetSpecies]).map( targetSetMap ).join('');
 };
 
-let Weblink = (imgName) => `./../Serebii__Images/${window.compendiums.aliases[toId(imgName)] || imgName}.png`;
+let Weblink = (imgName) => `./../images/pokemon/${window.compendiums.aliases[toId(imgName)] || imgName}.png`;
 
 window.brmtIcon = function brmtIcon (compendium, title, species, set, rating) {
 	let wrapperClass = "imageWrapper";
