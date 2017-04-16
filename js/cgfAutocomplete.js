@@ -1,6 +1,6 @@
 var _autocomplete_StartIndex = -1;
 
-var _AutocompleteList = OpenTextfile('autocomplete.txt');
+var _AutocompleteList = OpenTextfile('./docs/autocomplete.txt');
 // make extra entries for full name / dexnumber lookup
 for (var line = 0; line < _AutocompleteList.length; line++) {
 	if ( _AutocompleteList[line].indexOf('|') >= 0 ) {

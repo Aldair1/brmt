@@ -58,7 +58,7 @@
 
 <!--Page Title-->
 <h2 style="display: inline-block; margin-right:.25em">OU Weakness Checker (BreakMyTeam)</h2>
-<a target="_blank" style="font-size:10pt" href="About.html">
+<a target="_blank" style="font-size:10pt" href="./docs/About.html">
 	About this tool
 </a>
 
@@ -72,12 +72,12 @@
 	<div style="margin-top:5px">
 		<select ID="ccSelector" onchange="SetChecksCompendium(this.value);">
 			<!--<option value="UBcc.txt" disabled>Ubers does not exist yet</option>-->
-			<option value="OUcc.txt" selected>OU Checks Compendium by Tressed</option>
+			<option value="./docs/OUcc.txt" selected>OU Checks Compendium by Tressed</option>
 			<!--<option value="UUcc.txt" disabled>UU does not exist yet</option>-->
-			<option value="RUcc.txt">RU Checks Compendium by Arifeen</option>
+			<option value="./docs/RUcc.txt">RU Checks Compendium by Arifeen</option>
 			<!--<option value="NUcc.txt" disabled>NU does not exist yet</option>-->
-			<option value="PUcc.txt">PU Checks Compendium by Anty</option>
-			<option value="LCcc.txt">LC Checks Compendium by Trash</option>
+			<option value="./docs/PUcc.txt">PU Checks Compendium by Anty</option>
+			<option value="./docs/LCcc.txt">LC Checks Compendium by Trash</option>
 		</select>
 		<button class="btn-xs" style="font-size:8pt" onclick="ShowPopout('tools', this);">edit</button>
 		<button class="btn-xs" style="font-size:8pt" onclick="ccSelector.onchange();">reload and discard changes</button>
@@ -352,8 +352,8 @@
 <!-- end messy section -->
 
 
-	<script src="cgfParser.js"></script>
-	<script src="cgfAutocomplete.js"></script>
-	<script src="ccTools.js"></script>
+	<script src="./js/cgfParser.js"></script>
+	<script src="./js/cgfAutocomplete.js"></script>
+	<script src="./js/ccTools.js"></script>
 
 </html>
